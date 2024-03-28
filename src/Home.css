@@ -1,0 +1,27 @@
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DA7308;
+    height: 100vh; /* Make the div take up the full viewport height */
+    width: 100vw; /* Make the div take up the full viewport width */
+}
+
+.btn-container{
+    margin: 0;
+    padding: 0;
+    background-color: #94849c;
+}
+
+.home-button{
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #94849c;
+    border: none;
+    padding: .8em 1.6em;
+    margin: 0 !important;
+}
+
+.home-button:hover{
+    background-color: #3c152a;
+} 

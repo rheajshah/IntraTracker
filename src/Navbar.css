@@ -1,0 +1,86 @@
+.nav-logo {
+    max-width: 40%;
+    max-height: 40%;
+}
+
+.nav-container a:hover {
+    color: #373f51;
+    background-color: #a9bcd0;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out;
+}
+
+.nav-container a {
+    color: #d0e2f5;
+    background-color: #373f51;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 1.5vw;
+
+}
+
+.nav {
+    width: 80vw;
+    height: 100%;
+
+}
+
+.nav-container {
+    padding: 0;
+    margin: 0;
+    z-index: 9999;
+}
+
+.navbar-collapse {
+    height: 100%;
+}
+
+.navbar-brand {
+    text-align: center;
+    margin: 0;
+    width: 20vw;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+}
+
+@media (max-width: 992px) {
+    .nav-container {
+        background-color: #373f51;
+    }
+
+    .navbar-toggler {
+        margin-right: 1em;
+        background-color: #a9bcd0;
+        height: 75%;
+        width: auto;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        right: 0;
+        top: 60px;
+        /* Adjust based on the navbar's height */
+        background-color: #373f51;
+        width: 100%;
+        /* Ensure it takes full width */
+    }
+
+    .nav {
+        display: block;
+        flex-direction: column;
+        /* Stack nav items vertically */
+        align-items: right;
+        /* Align items to the start (left) */
+        width: 100%;
+        /* Ensure nav takes full width of the collapse container */
+    }
+
+    .nav-link {
+        width: 100%;
+        /* Each nav-link takes full width */
+    }
+}

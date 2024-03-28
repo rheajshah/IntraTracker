@@ -1,0 +1,22 @@
+  .name {
+    color: #fff;
+    font-size: 35px;
+  }
+
+  .circle{
+    display: inline-flex; /* Display as inline block to fit the content */
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Create a circle by setting border radius to 50% */
+    background-color: #DA7308; /* Set background color */
+    padding: 15px; /* Add some padding for better visual appearance */
+    width: auto; /* Set minimum width to fit content */
+    height: auto; /* Set minimum height to fit content */
+    aspect-ratio: 1 / 1;
+}
+  
+  /* Additional styling for the player details */
+  .player-details {
+    flex-grow: 1;
+  }
+  
