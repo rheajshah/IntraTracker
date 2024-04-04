@@ -4,14 +4,14 @@
 }
 
 .nav-container a:hover {
-    color: #373f51;
-    background-color: #a9bcd0;
+    color: #f1e1cf;
+    background-color: #de9b6a;
     transition: color .15s ease-in-out, background-color .15s ease-in-out;
 }
 
 .nav-container a {
-    color: #d0e2f5;
-    background-color: #373f51;
+    color: #DA7308;
+    background-color: #FFE9CF;
     font-size: 18px;
     font-weight: bold;
     padding: 1.5vw;
@@ -49,24 +49,30 @@
 
 @media (max-width: 992px) {
     .nav-container {
-        background-color: #373f51;
+        background-color: #FFE9CF;
     }
 
     .navbar-toggler {
         margin-right: 1em;
-        background-color: #a9bcd0;
-        height: 75%;
+        background-color: #DA7308;
+        height: 80%;
         width: auto;
+    }
+
+    .navbar-toggler:focus {
+        outline: none; /* Remove the outline */
+        box-shadow: none; /* Remove the box shadow */
     }
 
     .navbar-collapse {
         position: absolute;
         right: 0;
-        top: 60px;
-        /* Adjust based on the navbar's height */
-        background-color: #373f51;
+         /* Adjust based on the navbar's height */
+        top: 100%;
+        background-color: #DA7308;
         width: 100%;
         /* Ensure it takes full width */
+        text-align: center;
     }
 
     .nav {
