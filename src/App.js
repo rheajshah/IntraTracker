@@ -8,6 +8,8 @@ import AddPlayerWrapper from './AddPlayerWrapper';
 import EndGame from './EndGame';
 import { GameProvider } from './GameContext';
 import NavbarComponent from './Navbar'; 
+import PreviousGames from './PreviousGames';
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
             <Route path="/timer" element={<Timer />} />
             <Route path="/add-player" element={<AddPlayerWrapper />} />
             <Route path="/endGame" element={<EndGame />} />
+            <Route path="/previous-games" element={<PreviousGames />} />
           </Routes>
           </GameProvider>
         </BrowserRouter>

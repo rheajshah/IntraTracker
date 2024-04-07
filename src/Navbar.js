@@ -18,7 +18,7 @@ export default function NavbarComponent() {
         <Nav className="me-auto nav">
           {/* Use Link component for navigation */}
           <Nav.Link as={Link} to="/team">Manage Team</Nav.Link>
-          <Nav.Link as={Link} to="/timer">Timer Dashboard</Nav.Link>
+          <Nav.Link as={Link} to="/timer">Start New Game</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

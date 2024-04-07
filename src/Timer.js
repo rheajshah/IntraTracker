@@ -2,35 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import "./Timer.css";
 import { useNavigate } from 'react-router-dom';
+import { useGame } from './GameContext'; // Import useGame from GameContext
 
-const staticTeamList = [
-  {
-    name: 'Rhea',
-    position: 'Baller',
-    captain: false,
-    playing: false,
-  },
-  {
-    name: 'Blaine',
-    position: 'Computer',
-    captain: false,
-    playing: false,
-  },
-  {
-    name: 'Jeffin',
-    position: 'Midfield',
-    captain: false,
-    playing: false,
-  },
-  {
-    name: 'Sarthi',
-    position: 'Defender',
-    captain: false,
-    playing: false,
-  }
-];
-
-// Individual Clock component for each player
 const PlayerClock = ({ player, timer, toggleTimer }) => {
   return (
     <div className="player-clock">
@@ -40,14 +13,16 @@ const PlayerClock = ({ player, timer, toggleTimer }) => {
       </Button>
     </div>
   );
-};
+ };
+ 
 
 // Timer component to display all players' clocks
 function Timer() {
   const navigate = useNavigate();
+  const { team } = useGame(); // Use the useGame hook to get the team data
 
   const [timers, setTimers] = useState(
-    staticTeamList.reduce((acc, player) => {
+    team.reduce((acc, player) => { // Initialize timers with the team from context
       acc[player.name] = { seconds: 0, isActive: false };
       return acc;
     }, {})
@@ -94,7 +69,7 @@ function Timer() {
 
   return (
     <div className="timer">
-      {staticTeamList.map(player => (
+      {team.map(player => ( // Render player clocks based on the team from context
         <PlayerClock key={player.name} player={player} timer={timers[player.name]} toggleTimer={toggleTimer} />
       ))}
       <Button variant="warning" onClick={endGame} className="mt-3">End Game</Button>
