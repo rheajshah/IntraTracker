@@ -1,3 +1,25 @@
-.players-page{
+.players-page {
     text-align: center;
+}
+  
+.display-players {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.player-info-container {
+    width: 30%; /* Each player takes up 30% of the container */
+    margin: 10px; /* Adjust spacing between players */
+}
+
+.add-player-button{
+    margin-top: 25% !important;
+    margin-bottom: 10% !important;
+}
+
+@media (max-width: 768px) {
+    .player-info-container {
+        width: 45%; /* Each player takes up 45% of the container on smaller screens */
+    }
 }

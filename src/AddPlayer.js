@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
+import "./AddPlayer.css";
+
 function AddPlayer({ addPlayer }) {
   const [playerName, setPlayerName] = useState('');
   const [playerPosition, setPlayerPosition] = useState('');
