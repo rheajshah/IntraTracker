@@ -44,24 +44,6 @@ function AddPlayer({ addPlayer }) {
         />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formIsCaptain">
-        <Form.Check
-          type="checkbox"
-          label="Team Captain"
-          checked={isCaptain}
-          onChange={(e) => setIsCaptain(e.target.checked)}
-        />
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formIsActive">
-        <Form.Check
-          type="checkbox"
-          label="Currently Playing"
-          checked={isActive}
-          onChange={(e) => setIsActive(e.target.checked)}
-        />
-      </Form.Group>
-
       <Button variant="primary" type="submit">
         Save Player
       </Button>

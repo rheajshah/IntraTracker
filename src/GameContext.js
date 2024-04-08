@@ -19,11 +19,16 @@ export const GameProvider = ({ children }) => {
     setTeam((prevTeam) => [...prevTeam, newPlayer]);
   };
 
+  const removePlayerFromTeam = (name) => {
+    setTeam((prevTeam) => prevTeam.filter(player => player.name !== name));
+  };
+
   const value = {
     playerTimes,
     updatePlayerTimes,
     team,
-    addPlayerToTeam
+    addPlayerToTeam,
+    removePlayerFromTeam,
   };
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;

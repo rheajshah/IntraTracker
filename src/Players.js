@@ -6,13 +6,20 @@ import { useGame } from './GameContext';
 import "./Players.css";
 
 function Players() {
-  const { team } = useGame(); 
+  const { team, removePlayerFromTeam } = useGame();
+  const handleRemovePlayer = (name) => {
+    removePlayerFromTeam(name);
+  };
 
   return (
     <div className="players-page d-flex flex-column align-items-center justify-content-center">
       <div className="display-players">
         {team.map(player => (
-          <PlayerInfo key={player.name} {...player} />
+          <div key={player.name} className="player-info-container">
+            {}
+            <PlayerInfo {...player} />
+            <Button variant="danger" onClick={() => handleRemovePlayer(player.name)}>Remove</Button>
+          </div>
         ))}
       </div>
       <div>
