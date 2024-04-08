@@ -57,7 +57,6 @@ function Timer() {
   }, [timers]);
 
   const endGame = () => {
-    // Save the times to localStorage
     const playerTimesForStorage = {};
     Object.keys(timers).forEach((playerName) => {
       const timeString = new Date(timers[playerName].seconds * 1000).toISOString().substr(11, 8);
