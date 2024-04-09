@@ -91,4 +91,12 @@
         width: 100%;
         /* Each nav-link takes full width */
     }
+
+    .nav-container a {
+        font-size: 18px;
+    }
+
+    .word-links a{
+        padding: 1.3vw;
+    }
 }
