@@ -15,7 +15,7 @@ export default function NavbarComponent() {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto nav">
+        <Nav className="me-auto nav word-links">
           {/* Use Link component for navigation */}
           <Nav.Link as={Link} to="/team">Manage Team</Nav.Link>
           <Nav.Link as={Link} to="/timer">Start New Game</Nav.Link>
