@@ -1,0 +1,56 @@
+import React, { useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+
+import "./AddPlayer.css";
+
+function AddPlayer({ addPlayer }) {
+  const [playerName, setPlayerName] = useState('');
+  const [playerPosition, setPlayerPosition] = useState('');
+  const [isCaptain, setIsCaptain] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    addPlayer({
+      name: playerName,
+      position: playerPosition,
+      captain: isCaptain,
+      playing: isActive
+    });
+    navigate('/team');
+  };
+
+  return (
+    <Form onSubmit={handleSubmit}>
+      <Form.Group className="mb-3" controlId="formPlayerName">
+        <Form.Label>Player Name</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Enter player's name"
+          value={playerName}
+          onChange={(e) => setPlayerName(e.target.value)}
+          required
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formPlayerPosition">
+        <Form.Label>Position</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Enter player's position"
+          value={playerPosition}
+          onChange={(e) => setPlayerPosition(e.target.value)}
+          required
+        />
+      </Form.Group>
+
+      <Button variant="primary" type="submit">
+        Save Player
+      </Button>
+    </Form>
+  );
+}
+
+export default AddPlayer;
