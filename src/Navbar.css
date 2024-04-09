@@ -1,6 +1,6 @@
 .nav-logo {
-    max-width: 40%;
-    max-height: 40%;
+    max-width: 35%;
+    max-height: 35%;
 }
 
 .nav {
@@ -17,19 +17,19 @@
 .nav-container a {
     color: #DA7308;
     background-color: #FFE9CF;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     padding: 1.5vw;
 }
 
 .nav-container a:hover {
-    color: #f1e1cf;
+    color: white;
     background-color: #de9b6a;
     transition: color .15s ease-in-out, background-color .15s ease-in-out;
 }
 
 .word-links a{
-    padding: 3.85vw;
+    padding: 3.25vw;
 }
 
 .navbar-collapse {
