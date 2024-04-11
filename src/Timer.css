@@ -27,7 +27,7 @@
   
   @media (max-width: 768px) {
     .player-clock {
-      width: 90%; /* On smaller screens, each clock takes up 90% of the container width */
+      width: 45%; /* On smaller screens, each clock takes up 90% of the container width */
     }
   }
   
