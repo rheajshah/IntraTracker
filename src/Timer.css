@@ -17,17 +17,38 @@
 
 .timer {
     text-align: center;
-  }
+}
   
-  .player-clock {
+.player-clock {
     display: inline-block; /* Display as inline block */
     width: 30%; /* Each player takes up 30% of the container */
     margin: 10px; /* Adjust spacing between players */
-  }
+}
   
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .player-clock {
       width: 45%; /* On smaller screens, each clock takes up 90% of the container width */
     }
-  }
+}
+
+.game-clock {
+  text-align: center;
+  margin-bottom: 20px; /* Add some spacing */
+  padding: 15px; /* Padding for the container */
+  background-color: #f0f0f0; /* Light grey background for the container */
+  border: 2px solid #ccc; /* Border for the container */
+  display: inline-block;
+  width: 80%;
+  border-radius: 10px; /* Slightly rounded corners for the container */
+}
+
+.game-clock h3 {
+  display: inline-block;
+  background-color: #DA7308;
+  color: #fff;
+  padding: 15px;
+  border-radius: 0px; /* Make the clock square */
+  width: 150px; /* Fixed width */
+  text-align: center;
+}
   

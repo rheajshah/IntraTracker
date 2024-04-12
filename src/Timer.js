@@ -1,36 +1,62 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { useGame } from './GameContext'; // Import useGame from GameContext
+import { useGame } from './GameContext';
 
 import "./Timer.css";
 
 const PlayerClock = ({ player, timer, toggleTimer }) => {
+  // Generate initials from first and last names
+  const initials = `${player.name.charAt(0)}${player.lastName ? player.lastName.charAt(0) : ''}`;
+
   return (
     <div className="player-clock">
-      <h3 className="name circle">{player.name}</h3>
+      <h3 className="name circle">{initials}</h3>
       <h3>{new Date(timer.seconds * 1000).toISOString().substr(11, 8)}</h3>
       <Button variant={timer.isActive ? 'danger' : 'success'} onClick={() => toggleTimer(player.name)}>
         {timer.isActive ? 'Pause' : 'Start'}
       </Button>
     </div>
   );
- };
- 
+};
 
-// Timer component to display all players' clocks
+
 function Timer() {
   const navigate = useNavigate();
-  const { team } = useGame(); // Use the useGame hook to get the team data
+  const { gameTeam } = useGame();
 
   const [timers, setTimers] = useState(
-    team.reduce((acc, player) => { // Initialize timers with the team from context
+    gameTeam.reduce((acc, player) => {
       acc[player.name] = { seconds: 0, isActive: false };
       return acc;
     }, {})
   );
 
+  const [gameClock, setGameClock] = useState({ seconds: 0, isActive: false });
+
+  const toggleGameClock = () => {
+    setGameClock(prevGameClock => {
+        const newActiveState = !prevGameClock.isActive;
+        if (!newActiveState) { // If we are pausing the game clock
+            // Pause all player timers
+            setTimers(prevTimers => {
+                const newTimers = { ...prevTimers };
+                for (const key of Object.keys(newTimers)) {
+                    newTimers[key] = { ...newTimers[key], isActive: false };
+                }
+                return newTimers;
+            });
+        }
+        return { ...prevGameClock, isActive: newActiveState };
+    });
+  };
+
+
   const toggleTimer = (playerName) => {
+    if (!gameClock.isActive) {
+      alert("Game Clock is Paused, Start game clock to start Player Timer!");
+      return;
+    }
     setTimers(prevTimers => {
       const isActive = !prevTimers[playerName].isActive;
       const newTimers = {
@@ -42,25 +68,31 @@ function Timer() {
   };
 
   useEffect(() => {
-    const activeTimers = Object.entries(timers).filter(([, timer]) => timer.isActive);
-    if (activeTimers.length === 0) return;
-
     const interval = setInterval(() => {
-      setTimers(prevTimers => {
-        const newTimers = { ...prevTimers };
-        activeTimers.forEach(([playerName]) => {
-          newTimers[playerName].seconds += 1;
-        });
-        return newTimers;
-      });
+      let updatedTimers = {...timers};
+
+      if (gameClock.isActive) {
+        setGameClock(prevGameClock => ({
+          ...prevGameClock,
+          seconds: prevGameClock.seconds + 1
+        }));
+      }
+
+      for (const [playerName, timer] of Object.entries(timers)) {
+        if (timer.isActive) {
+          updatedTimers[playerName].seconds = timer.seconds + 1;
+        }
+      }
+      
+      setTimers(updatedTimers);
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [timers]);
+  }, [gameClock, timers]);
 
   const endGame = () => {
     const playerTimesForStorage = {};
-    Object.keys(timers).forEach((playerName) => {
+    Object.keys(timers).forEach(playerName => {
       const timeString = new Date(timers[playerName].seconds * 1000).toISOString().substr(11, 8);
       playerTimesForStorage[playerName] = timeString;
     });
@@ -70,13 +102,17 @@ function Timer() {
 
   return (
     <div className="timer">
-      <h3 className="text-center">Manage Play Times</h3>
-      {team.map(player => ( // Render player clocks based on the team from context
+      <div className="game-clock">
+        <h3>{new Date(gameClock.seconds * 1000).toISOString().substr(11, 8)}</h3>
+        <Button variant={gameClock.isActive ? 'danger' : 'success'} onClick={toggleGameClock}>
+          {gameClock.isActive ? 'Pause Game' : 'Start Game'}
+        </Button>
+      </div>
+      <h3 className="text-center">Player Times:</h3>
+      {gameTeam.map(player => (
         <PlayerClock key={player.name} player={player} timer={timers[player.name]} toggleTimer={toggleTimer} />
       ))}
-      <div>
-        <Button variant="warning" onClick={endGame} className="mt-3">End Game</Button>
-      </div>
+      <Button variant="warning" onClick={endGame} className="mt-3">End Game</Button>
     </div>
   );
 }

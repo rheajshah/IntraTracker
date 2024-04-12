@@ -2,49 +2,45 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-import "./AddPlayer.css";
-
 function AddPlayer({ addPlayer }) {
-  const [playerName, setPlayerName] = useState('');
-  const [playerPosition, setPlayerPosition] = useState('');
-  const [isCaptain, setIsCaptain] = useState(false);
-  const [isActive, setIsActive] = useState(false);
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     addPlayer({
-      name: playerName,
-      position: playerPosition,
-      captain: isCaptain,
-      playing: isActive
+      name: firstName,  // Continue using first name as the primary identifier
+      lastName,         // Add last name to player data
+      // Assuming captain and active status are not needed now as per the unused warning
     });
     navigate('/team');
   };
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formPlayerName">
-        <Form.Label>Player Name</Form.Label>
+      <Form.Group className="mb-3" controlId="formFirstName">
+        <Form.Label>First Name</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Enter player's name"
-          value={playerName}
-          onChange={(e) => setPlayerName(e.target.value)}
+          placeholder="Enter player's first name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
           required
         />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formPlayerPosition">
-        <Form.Label>Position</Form.Label>
+      <Form.Group className="mb-3" controlId="formLastName">
+        <Form.Label>Last Name</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Enter player's position"
-          value={playerPosition}
-          onChange={(e) => setPlayerPosition(e.target.value)}
-          required
+          placeholder="Enter player's last name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
         />
       </Form.Group>
+
+  
 
       <Button variant="primary" type="submit">
         Save Player

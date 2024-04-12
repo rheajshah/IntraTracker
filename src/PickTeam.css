@@ -1,0 +1,44 @@
+.pick-team {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.pick-team h1 {
+    text-align: center;
+    color: #333;
+}
+
+.player-list {
+    margin: 20px 0;
+}
+
+.player-item {
+    background: white;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.player-item:hover {
+    background-color: #efefef;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.player-item.selected {
+    background-color: #cce5ff;  /* A light blue to indicate selection */
+    color: #0056b3;  /* Darker text for better contrast on blue background */
+}
+
+.start-game-btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}

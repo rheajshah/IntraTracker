@@ -16,8 +16,7 @@ function Players() {
       <div className="display-players">
         {team.map(player => (
           <div key={player.name} className="player-info-container d-flex flex-column align-items-center justify-content-center">
-            {}
-            <PlayerInfo {...player} />
+            <PlayerInfo name={player.name} /> 
             <Button variant="danger" onClick={() => handleRemovePlayer(player.name)}>Remove</Button>
           </div>
         ))}
