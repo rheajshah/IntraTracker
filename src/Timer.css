@@ -51,4 +51,13 @@
   width: 150px; /* Fixed width */
   text-align: center;
 }
+
+.active {
+  outline: 6px solid rgb(29, 193, 29); /* Green outline for active players */
+}
+
+.inactive {
+  outline: 6px solid red; /* Red outline for inactive players */
+}
+
   
