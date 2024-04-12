@@ -1,0 +1,47 @@
+.previous-games {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .previous-games h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .games-list {
+    margin-top: 20px;
+  }
+  
+  .game-entry {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .game-entry h3 {
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .game-entry ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .game-entry li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    color: #666;
+  }
+  
+  .game-entry li:last-child {
+    border-bottom: none;
+  }
+  
