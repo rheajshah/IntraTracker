@@ -17,6 +17,10 @@ function PickTeam() {
         );
     };
 
+    const handleSelectAllPlayers = () => {
+        setSelectedPlayers(team); // Select all players
+    };
+
     const handleStartGame = () => {
         setGameTeam(selectedPlayers);
         navigate('/timer');
@@ -25,6 +29,7 @@ function PickTeam() {
     return (
         <div className="pick-team">
             <h1 className="page-title">Select Players for the Game</h1>
+            <Button onClick={handleSelectAllPlayers} className="start-game-btn select-all-btn">Select All Players</Button>
             <div className="player-list">
                 {team.map(player => (
                     <div key={player.name} className={`player-item ${selectedPlayers.includes(player) ? 'selected' : ''}`} onClick={() => toggleSelectPlayer(player)}>
