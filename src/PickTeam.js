@@ -24,7 +24,7 @@ function PickTeam() {
 
     return (
         <div className="pick-team">
-            <h1>Select Players for the Game</h1>
+            <h1 className="page-title">Select Players for the Game</h1>
             <div className="player-list">
                 {team.map(player => (
                     <div key={player.name} className={`player-item ${selectedPlayers.includes(player) ? 'selected' : ''}`} onClick={() => toggleSelectPlayer(player)}>

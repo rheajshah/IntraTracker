@@ -18,7 +18,7 @@ function PreviousGames() {
 
   return (
     <div className="previous-games">
-      <h2>Previous Games</h2>
+     <h1 className="page-title">Previous Games</h1>
       <div className="games-list">
         {savedGames.map((game, index) => (
           <div key={index} className="game-entry">
@@ -31,7 +31,7 @@ function PreviousGames() {
           </div>
         ))}
       </div>
-      <Button onClick={goToHome} className="mt-3">Home</Button>
+      <Button onClick={goToHome} className="mt-3 pg-home-button">Home</Button>
     </div>
   );
 }

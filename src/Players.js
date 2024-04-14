@@ -13,6 +13,7 @@ function Players() {
 
   return (
     <div className="players-page d-flex flex-column align-items-center justify-content-center">
+      <h1 className="page-title">Manage Team</h1>
       <div className="display-players">
         {team.map(player => (
           <div key={player.name} className="player-info-container d-flex flex-column align-items-center justify-content-center">

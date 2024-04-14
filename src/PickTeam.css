@@ -8,11 +8,6 @@
     font-family: 'Arial', sans-serif;
 }
 
-.pick-team h1 {
-    text-align: center;
-    color: #333;
-}
-
 .player-list {
     margin: 20px 0;
 }
@@ -25,6 +20,8 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+    color: rgb(71, 71, 71);
 }
 
 .player-item:hover {
@@ -33,12 +30,23 @@
 }
 
 .player-item.selected {
-    background-color: #cce5ff;  /* A light blue to indicate selection */
-    color: #0056b3;  /* Darker text for better contrast on blue background */
+    background-color: #fad3a8;  /* A light blue to indicate selection */
+    color: #DA7308;  /* Darker text for better contrast on blue background */
 }
 
 .start-game-btn {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center;
+    width: 50%;
+    margin: 20px auto; /* Centers vertically and adds margin on top */
+    background-color: #DA7308;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.start-game-btn:hover {
+    background-color: #fad3a8;
+    color: #DA7308;
 }

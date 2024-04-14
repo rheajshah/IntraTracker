@@ -36,6 +36,14 @@
   background-color: #de9b6a;
 }
 
+.page-title {
+  text-align: center;
+  color: #DA7308;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  margin: 20px auto;
+}
+
 @media (max-width: 932px) {
   .btn-container {
     display: flex;
