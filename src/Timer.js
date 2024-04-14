@@ -12,6 +12,7 @@ const PlayerClock = ({ player, timer, toggleTimer }) => {
   return (
     <div className="player-clock">
       <h3 className={`name circle ${timer.isActive ? 'active' : 'inactive'}`}>{initials}</h3>
+      <h5>{player.name}</h5>
       <h3>{new Date(timer.seconds * 1000).toISOString().substr(11, 8)}</h3>
       <Button variant={timer.isActive ? 'danger' : 'success'} onClick={() => toggleTimer(player.name)}>
         {timer.isActive ? 'Pause' : 'Start'}
