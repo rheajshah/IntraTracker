@@ -103,17 +103,21 @@ function Timer() {
 
   return (
     <div className="timer">
-      <div className="game-clock">
-        <h3>{new Date(gameClock.seconds * 1000).toISOString().substr(11, 8)}</h3>
-        <Button variant={gameClock.isActive ? 'danger' : 'success'} onClick={toggleGameClock}>
-          {gameClock.isActive ? 'Pause Game' : 'Start Game'}
-        </Button>
+      <div className="timer-container">
+        <div className="game-clock">
+          <h3>{new Date(gameClock.seconds * 1000).toISOString().substr(11, 8)}</h3>
+          <Button className="eg-btn" variant={gameClock.isActive ? 'danger' : 'success'} onClick={toggleGameClock}>
+            {gameClock.isActive ? 'Pause Game' : 'Start Game'}
+          </Button>
+        </div>
       </div>
-      <h3 className="text-center">Player Times:</h3>
-      {gameTeam.map(player => (
-        <PlayerClock key={player.name} player={player} timer={timers[player.name]} toggleTimer={toggleTimer} />
-      ))}
-      <Button variant="warning" onClick={endGame} className="mt-3">End Game</Button>
+      <h3 className="page-title text-center">Player Times:</h3>
+      <div>
+        {gameTeam.map(player => (
+          <PlayerClock key={player.name} player={player} timer={timers[player.name]} toggleTimer={toggleTimer} />
+        ))}
+      </div>
+      <Button variant="warning" onClick={endGame} className="mt-3 pg-home-button eg-btn">End Game</Button>
     </div>
   );
 }
