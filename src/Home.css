@@ -14,7 +14,7 @@
 
 @keyframes backgroundAnimation {
   0% { background-position: right bottom; }
-  50% { background-position: 5% 5%; } /* Move to a little above and to the left of the bottom-right corner */
+  50% { background-position: 2% 2%; } /* Move to a little above and to the left of the bottom-right corner */
   100% { background-position: right bottom; } /* Return to the bottom-right corner */
 }
 
