@@ -1,44 +1,60 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
-import './PickTeam.css'; // Import the PickTeam CSS for styling
+import Swal from 'sweetalert2';
+import './PickTeam.css';
 
 function EditTime() {
     const navigate = useNavigate();
     const location = useLocation();
-    const { playerTimes, gameId } = location.state; // Destructure gameId and playerTimes
+    const { playerTimes, gameId } = location.state;
     const [times, setTimes] = useState(playerTimes);
 
     const handleTimeChange = (name, newTime) => {
         setTimes(prevTimes => ({ ...prevTimes, [name]: newTime }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const gameName = prompt("Please enter a name for this game:") || "Unnamed Game";  // Provide a default name in case none is entered
+        const { value: gameName } = await Swal.fire({
+            title: 'Enter the name of this game',
+            input: 'text',
+            inputPlaceholder: 'Enter the name of the game',
+            showCancelButton: true,
+            inputValidator: (value) => {
+                if (!value) {
+                    return 'You need to write something!';
+                }
+            }
+        }) || { value: "Unnamed Game" }; // Use "Unnamed Game" if no input provided
+
         let savedGames = JSON.parse(localStorage.getItem('savedGames')) || [];
         let gameExists = false;
 
         const updatedGames = savedGames.map(game => {
             if (game.id === gameId) {
                 gameExists = true;
-                return { ...game, gameName, playerTimes: times };  // Update the name along with the times
+                return { ...game, gameName, playerTimes: times };
             }
             return game;
         });
 
-        // If the game does not exist in saved games, add it as a new entry
         if (!gameExists) {
             updatedGames.push({ id: gameId, gameName, playerTimes: times });
         }
 
         localStorage.setItem('savedGames', JSON.stringify(updatedGames));
-        alert("Changes saved successfully!");
-        navigate('/previous-games'); // Navigate to the Previous Games page or wherever appropriate
+        Swal.fire({
+            title: 'Success!',
+            text: 'Changes saved successfully!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+        navigate('/previous-games');
     };
 
     return (
-        <div className="pick-team"> {/* Reuse the pick-team class for consistent styling */}
+        <div className="pick-team">
             <h2 className="page-title">Edit Player Times</h2>
             <Form onSubmit={handleSubmit}>
                 {Object.entries(times).map(([name, time]) => (
@@ -51,11 +67,11 @@ function EditTime() {
                         />
                     </Form.Group>
                 ))}
-                <Button type="submit" className="start-game-btn"> {/* Reuse the start-game-btn class */}
+                <Button type="submit" className="start-game-btn">
                     Save Changes
                 </Button>
             </Form>
-            <Button variant="secondary" className="start-game-btn" onClick={() => navigate(-1)}> {/* Reuse the start-game-btn class */}
+            <Button variant="secondary" className="start-game-btn" onClick={() => navigate(-1)}>
                 Back
             </Button>
         </div>

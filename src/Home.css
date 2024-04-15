@@ -8,6 +8,15 @@
   width: 100vw; /* Make the div take up the full viewport width */
 }
 
+.logo{
+  max-width: 40%;
+  max-height: 40%;
+  border: 2px solid #FFE9CF; /* Add a black border */
+  border-radius: 30%; /* Make it circular */
+  overflow: hidden; /* Ensure image stays within the circle */
+  transform: scale(.9); /* Scale down the image slightly */
+}
+
 .title {
   font-size: 60px;
   font-weight: bold;

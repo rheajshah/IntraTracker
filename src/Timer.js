@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useGame } from './GameContext';
+import Swal from 'sweetalert2';
 
 import "./Timer.css";
 
@@ -55,7 +56,13 @@ function Timer() {
 
   const toggleTimer = (playerName) => {
     if (!gameClock.isActive) {
-      alert("Game Clock is Paused, Start game clock to start Player Timer!");
+      // Use SweetAlert2 for a better alert
+    Swal.fire({
+      title: 'Game Clock is Paused',
+      text: "Start game clock to start Player Timer!",
+      icon: 'info',
+      confirmButtonText: 'Okay'
+    });
       return;
     }
     setTimers(prevTimers => {
@@ -100,6 +107,7 @@ function Timer() {
     localStorage.setItem('playerTimes', JSON.stringify(playerTimesForStorage));
     navigate('/endGame');
   };
+  
 
   return (
     <div className="timer">

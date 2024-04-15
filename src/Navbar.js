@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { Link, useLocation } from 'react-router-dom'; // Import Link and useLocation
+import { Link} from 'react-router-dom'; // Import Link and useLocation
 import './Navbar.css';
 
 export default function NavbarComponent() {
   const [expanded, setExpanded] = useState(false); // State to manage navbar collapse
-  const location = useLocation(); // Get current location
   
   const handleNavbarToggle = () => setExpanded(!expanded); // Function to toggle navbar collapse
 
@@ -21,7 +20,7 @@ export default function NavbarComponent() {
     <Navbar expand="lg" className="nav-container" expanded={expanded}>
       <Navbar.Brand as={Link} to="/" onClick={handleLinkClick}> {/* Add onClick to collapse navbar */}
         <img className="nav-brand nav-logo"
-          src={`${process.env.PUBLIC_URL}/IntraTrackerLogo.png`}
+          src={`${process.env.PUBLIC_URL}/home.png`}
           alt="Logo"
         />
       </Navbar.Brand>
