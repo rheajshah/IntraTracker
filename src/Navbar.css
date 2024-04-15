@@ -1,6 +1,6 @@
 .nav-logo {
-    max-width: 24%;
-    max-height: 24%;
+    max-width: 35%;
+    max-height: 35%;
 }
 
 .nav {
@@ -29,7 +29,7 @@
 }
 
 .word-links a{
-    padding: 2.15vw;
+    padding: 3.25vw;
 }
 
 .navbar-collapse {
@@ -47,10 +47,6 @@
     align-items: center;
     justify-content: center;
     width: 33.33%;
-}
-
-.nav-link:visited {
-    color: #DA7308;
 }
 
 @media (max-width: 992px) {
@@ -90,11 +86,6 @@
         width: 100%;
         /* Ensure nav takes full width of the collapse container */
     }
-
-    .nav-logo {
-        max-width: 33%;
-        max-height: 33%;
-    }    
 
     .nav-link {
         width: 100%;
