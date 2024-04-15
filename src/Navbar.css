@@ -1,6 +1,6 @@
 .nav-logo {
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 24%;
+    max-height: 24%;
 }
 
 .nav {
@@ -29,7 +29,7 @@
 }
 
 .word-links a{
-    padding: 3.25vw;
+    padding: 2.15vw;
 }
 
 .navbar-collapse {
@@ -90,6 +90,11 @@
         width: 100%;
         /* Ensure nav takes full width of the collapse container */
     }
+
+    .nav-logo {
+        max-width: 33%;
+        max-height: 33%;
+    }    
 
     .nav-link {
         width: 100%;

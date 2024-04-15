@@ -6,11 +6,21 @@
   background-color: #DA7308;
   height: 100vh; /* Make the div take up the full viewport height */
   width: 100vw; /* Make the div take up the full viewport width */
+  background-image: url('../public/hoop.gif'); /* Corrected path to the background image */
+  background-size: cover;
+  background-position: right bottom; /* Position the background in the bottom-right corner */
+  animation: backgroundAnimation 10s linear infinite; /* Adjust the speed of the animation */
+}
+
+@keyframes backgroundAnimation {
+  0% { background-position: right bottom; }
+  50% { background-position: 5% 5%; } /* Move to a little above and to the left of the bottom-right corner */
+  100% { background-position: right bottom; } /* Return to the bottom-right corner */
 }
 
 .logo{
-  max-width: 40%;
-  max-height: 40%;
+  max-width: 30%;
+  max-height: 30%;
   border: 2px solid #FFE9CF; /* Add a black border */
   border-radius: 30%; /* Make it circular */
   overflow: hidden; /* Ensure image stays within the circle */
