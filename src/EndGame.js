@@ -30,7 +30,12 @@ function EndGame() {
             };
             savedGames.push(newGame);
             localStorage.setItem('savedGames', JSON.stringify(savedGames));
-            alert("Game saved!");
+            Swal.fire({
+                title: 'Success!',
+                text: 'Game saved successfully!',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
         }
     };
 
