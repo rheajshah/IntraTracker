@@ -1,62 +1,67 @@
+:root {
+  --chart-background-color: #DA7308; /* Orange color used in the chart */
+  --chart-tick-color: #666; /* Color for tick marks */
+}
+
 .previous-games {
-    font-family: 'Arial', sans-serif;
-    margin: 20px auto;
-    max-width: 800px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .games-list {
-    margin-top: 20px;
-  }
-  
-  .game-entry {
-    background: white;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  }
-  
-  .game-entry h3 {
-    color: #DA7308;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .game-entry ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .game-entry li {
-    padding: 5px 0;
-    border-bottom: 1px solid #eee;
-    color: #666;
-  }
-  
-  .game-entry li:last-child {
-    border-bottom: none;
-  }
+  font-family: 'Arial', sans-serif;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
-  .pg-home-button {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    background-color: #DA7308;
-    border: none;
-    padding: .8em 1.6em;
-    margin: 0;
-    margin-left: 0 !important;
-  }
-  
-  .pg-home-button:hover {
-    background-color: #fad3a8;
-    color: #DA7308;
-  }
+.games-list {
+  margin-top: 20px;
+}
 
-  .rem-btn{
-    font-size: 16px;
-  }
+.game-entry {
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.game-entry h3 {
+  color: #DA7308;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.game-entry ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.game-entry li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+  color: #666;
+}
+
+.game-entry li:last-child {
+  border-bottom: none;
+}
+
+.pg-home-button {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #DA7308;
+  border: none;
+  padding: .8em 1.6em;
+  margin: 0;
+  margin-left: 0 !important;
+}
+
+.pg-home-button:hover {
+  background-color: #fad3a8;
+  color: #DA7308;
+}
+
+.rem-btn {
+  font-size: 16px;
+}
