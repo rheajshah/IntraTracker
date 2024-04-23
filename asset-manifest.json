@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/IntraTracker/static/css/main.eca93891.css",
+    "main.js": "/IntraTracker/static/js/main.ec97c9af.js",
+    "static/js/453.8ab44547.chunk.js": "/IntraTracker/static/js/453.8ab44547.chunk.js",
+    "static/media/hoop.gif": "/IntraTracker/static/media/hoop.edca279a3b2f68add6ba.gif",
+    "index.html": "/IntraTracker/index.html",
+    "main.eca93891.css.map": "/IntraTracker/static/css/main.eca93891.css.map",
+    "main.ec97c9af.js.map": "/IntraTracker/static/js/main.ec97c9af.js.map",
+    "453.8ab44547.chunk.js.map": "/IntraTracker/static/js/453.8ab44547.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eca93891.css",
+    "static/js/main.ec97c9af.js"
+  ]
+}
